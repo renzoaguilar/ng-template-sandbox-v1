@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-template-sandbox-v1';
+  @ViewChild('widgetElement') widgetElement!: ElementRef;
+  message = '';
+
+  handleWidgetEvent(event: Event): void {
+    const { detail } = event as CustomEvent;
+    this.message = detail;
+  }
+
+  sendMessageToWidget(): void {
+    this.widgetElement.nativeElement.widgetMethod('Message from sandbox');
+  }
 }
