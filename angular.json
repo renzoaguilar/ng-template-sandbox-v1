@@ -33,7 +33,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "../ng-template-widget-v1/dist/ng-template-widget.vendor.js"
+              "../ng-front-template-widget-v1/dist/ng-template-widget.vendor.js"
             ]
           },
           "configurations": {
